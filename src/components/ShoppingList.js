@@ -3,7 +3,7 @@ import ItemForm from "./ItemForm";
 import Filter from "./Filter";
 import Item from "./Item";
 
-function ShoppingList({ items, handleSubmit }) {
+function ShoppingList({ items, onItemFormSubmit }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [search, setSearch] = useState("");
 
@@ -23,7 +23,7 @@ function ShoppingList({ items, handleSubmit }) {
 
   return (
     <div className="ShoppingList">
-      <ItemForm handleSubmit={handleSubmit} />
+      <ItemForm onItemFormSubmit={onItemFormSubmit} />
       <Filter
         onCategoryChange={handleCategoryChange}
         onSearchChange={onSearchChange}
